@@ -13,6 +13,7 @@
 		81A6BC1E1B4843CD00D2A7A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A6BC1D1B4843CD00D2A7A8 /* Images.xcassets */; };
 		81A6BC211B4843CD00D2A7A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A6BC1F1B4843CD00D2A7A8 /* LaunchScreen.xib */; };
 		81A6BC2D1B4843CD00D2A7A8 /* bluetoothTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6BC2C1B4843CD00D2A7A8 /* bluetoothTests.swift */; };
+		81B7F78D1B4B2AB5006EA472 /* MouseServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7F78C1B4B2AB5006EA472 /* MouseServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		81A6BC261B4843CD00D2A7A8 /* bluetoothTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bluetoothTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A6BC2B1B4843CD00D2A7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81A6BC2C1B4843CD00D2A7A8 /* bluetoothTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bluetoothTests.swift; sourceTree = "<group>"; };
+		81B7F78C1B4B2AB5006EA472 /* MouseServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				81A6BC1D1B4843CD00D2A7A8 /* Images.xcassets */,
 				81A6BC1F1B4843CD00D2A7A8 /* LaunchScreen.xib */,
 				81A6BC141B4843CD00D2A7A8 /* Supporting Files */,
+				81B7F78C1B4B2AB5006EA472 /* MouseServiceManager.swift */,
 			);
 			path = bluetooth;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				81A6BC191B4843CD00D2A7A8 /* ViewController.swift in Sources */,
 				81A6BC171B4843CD00D2A7A8 /* AppDelegate.swift in Sources */,
+				81B7F78D1B4B2AB5006EA472 /* MouseServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				81A6BC321B4843CD00D2A7A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81A6BC331B4843CD00D2A7A8 /* Build configuration list for PBXNativeTarget "bluetoothTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				81A6BC351B4843CD00D2A7A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,6 +11,9 @@ import CoreMotion
 
 class ViewController: UIViewController {
     
+    // Advertise the service
+    let mouseService = MouseServiceManager()
+    
     var xs = [Double]()
     var ys = [Double]()
 
@@ -24,6 +27,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mouseService.delegate = self
         print("View")
         
         motionManager.deviceMotionUpdateInterval = 0.01
@@ -58,6 +62,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func redTapped(sender : AnyObject) {
+        self.changeColor(UIColor.redColor())
+        mouseService.sendColor("red")
         for x in xs {
             print("\(x),")
         }
@@ -68,7 +74,37 @@ class ViewController: UIViewController {
             print("\(y),")
         }
     }
+    
+    
+    func changeColor(color : UIColor) {
+        UIView.animateWithDuration(0.2) {
+            self.view.backgroundColor = color
+        }
+    }
 
 
+}
+
+extension ViewController : MouseServiceManagerDelegate {
+    
+    func connectedDevicesChanged(manager: MouseServiceManager, connectedDevices: [String]) {
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+
+        }
+    }
+    
+    func colorChanged(manager: MouseServiceManager, colorString: String) {
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            switch colorString {
+            case "red":
+                self.changeColor(UIColor.redColor())
+            case "yellow":
+                self.changeColor(UIColor.yellowColor())
+            default:
+                NSLog("%@", "Unknown color value received: \(colorString)")
+            }
+        }
+    }
+    
 }
 
