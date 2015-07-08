@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         mouseService.delegate = self
         print("View")
         
-        motionManager.deviceMotionUpdateInterval = 0.01
+        motionManager.deviceMotionUpdateInterval = 0.001
         
         if motionManager.deviceMotionAvailable{
             let queue = NSOperationQueue()
@@ -44,15 +44,9 @@ class ViewController: UIViewController {
     }
     
     func handleDeviceMotionUpdate(data : CMDeviceMotion) {
-        var x = data.userAcceleration.x * -10000
-        var y = data.userAcceleration.y * 10000
-        if (abs(x) < 500) {
-            x = 0        }
-        if (abs(y) < 500) {
-            y = 0
-        }
-        xs.append(x)
-        ys.append(y)
+        var x = data.userAcceleration.x * -100000
+        var y = data.userAcceleration.y * 100000
+        mouseService.sendX(x)
     }
     
     func printArray(xs: [Double]) {
@@ -64,15 +58,15 @@ class ViewController: UIViewController {
     @IBAction func redTapped(sender : AnyObject) {
         self.changeColor(UIColor.redColor())
         mouseService.sendColor("red")
-        for x in xs {
-            print("\(x),")
-        }
-        println()
-        println()
-        println()
-        for y in ys {
-            print("\(y),")
-        }
+//        for x in xs {
+//            print("\(x),")
+//        }
+//        println()
+//        println()
+//        println()
+//        for y in ys {
+//            print("\(y),")
+//        }
     }
     
     

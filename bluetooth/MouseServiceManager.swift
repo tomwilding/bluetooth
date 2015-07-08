@@ -61,6 +61,16 @@ class MouseServiceManager : NSObject {
         
     }
     
+    func sendX(x : Double) {
+        if session.connectedPeers.count > 0 {
+            var error : NSError?
+            if !self.session.sendData(x.description.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), toPeers: session.connectedPeers, withMode: MCSessionSendDataMode.Reliable, error: &error) {
+                NSLog("%@", "\(error)")
+            }
+        }
+        
+    }
+    
 }
 
 extension MouseServiceManager : MCNearbyServiceAdvertiserDelegate {
